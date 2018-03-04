@@ -5,7 +5,6 @@
  */
 package assignment1;
 
-import Assignment1.Student;
 import java.time.LocalDate;
 import java.time.Month;
 import org.junit.After;
