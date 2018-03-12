@@ -389,7 +389,7 @@ public class InstructorTest
     @Test
     public void testGetAgeInYears()
     {
-        int expResult = 41;
+        int expResult = 42;
         int result = instructor.getAgeInYears();
         assertEquals(expResult, result);
     }
