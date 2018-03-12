@@ -332,7 +332,7 @@ public class StudentTest
     public void testGetAge()
     {
         System.out.println("getAge");
-        int expResult = 41;
+        int expResult = 42;
         int result = student.getAge();
         assertEquals(expResult, result);
     }
