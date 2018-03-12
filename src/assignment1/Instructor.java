@@ -15,7 +15,7 @@ public class Instructor {
     private String firstName, lastName, streetAddress, city, postalCode;
     private LocalDate hireDate, birthday;
     private int employeeNum;
-    private ArrayList<String> teachableSubjects = new ArrayList();
+    private ArrayList<String> teachableSubjects = new ArrayList<String>();
     
     /**
      * Instructor constructor
@@ -231,6 +231,10 @@ public class Instructor {
         return Period.between(hireDate, LocalDate.now()).getYears();
     }
     
+    /**
+     * Verify the course code isn't empty and add to the instructors teachable subjects.
+     * @param courseCode 
+     */
     public void addCourseToAbilities(String courseCode){
         if("".equals(courseCode)){
             throw new IllegalArgumentException("The course code cannot be empty.");
@@ -239,10 +243,19 @@ public class Instructor {
         }
     }
     
+    /**
+     * Determine if the instructor is qualified to teach the course.
+     * @param courseCode
+     * @return 
+     */
     public boolean canTeach(String courseCode){
         return teachableSubjects.contains(courseCode);
     }
     
+    /**
+     * Return a list of courses the instructor is qualified to teach (without the square brackets).
+     * @return 
+     */
     public String listOfSubjectsCertifiedToTeach(){
         return (teachableSubjects.toString().replace("[","").replace("]",""));
     }
